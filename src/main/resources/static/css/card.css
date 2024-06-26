@@ -66,3 +66,14 @@
     color: #404040;
     font-size: small
 }
+
+#tag{
+    z-index: 99;
+    position: absolute;
+    background-color: #65758f;
+    text-decoration-color: #cdd8e7;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
