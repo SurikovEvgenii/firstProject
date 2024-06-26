@@ -1,0 +1,47 @@
+body {
+    background-color: #e4e4e4;
+    margin: auto;
+}
+
+header {
+    margin: auto;
+    align-self: center;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 5px 0px 15px grey;
+}
+
+header .button{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 80px;
+    padding-right: 80px;
+    border-radius: 50px;
+    background-color: #404b5a;
+}
+
+header .button:hover{
+    transition: 0.3s;
+    background-color: #6a7b94;
+}
+
+header .button a{
+    color: white;
+    text-decoration: none;
+}
+
+.navbar-brand img{
+    width: 300px;
+    height: auto;
+}
+
+.sub-header{
+    padding-bottom: 100px;
+}
+
+.container{
+    border-radius: 20px;
+    padding: 20px
+}
+

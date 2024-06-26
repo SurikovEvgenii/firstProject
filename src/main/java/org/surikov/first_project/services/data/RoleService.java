@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import org.surikov.first_project.entities.data.Role;
 import org.surikov.first_project.repository.data.RoleRepository;
 
+import java.util.List;
+
 @Service
 public class RoleService {
 
@@ -18,6 +20,10 @@ public class RoleService {
 
     public Role findById(Long id){
         return roleRepository.findById(id).get();
+    }
+
+    public List<Role> findAll(){
+        return roleRepository.findAll();
     }
 
 }

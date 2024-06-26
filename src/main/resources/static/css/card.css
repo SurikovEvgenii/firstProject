@@ -1,0 +1,68 @@
+.card-body-outer{
+    display: inline-list-item;
+    max-width: 800px;
+    align-self: center;
+    margin: auto;
+    padding-bottom: 5px;
+}
+
+.card{
+    border-radius: 0px;
+    border: none;
+}
+
+.card-body{
+    background-color: #eaeaea;
+}
+
+.card-body-outer .card-body .card-buttons{
+    padding-top: 10px;
+    padding-bottom: 10px
+}
+
+.card-body-outer .card-body .card-buttons a{
+    background-color: #404b5a;
+    color: white;
+    text-decoration: none;
+    max-height: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.card-body-outer .card-body .card-buttons a:hover{
+    transition: 0.3s;
+    background-color: #6a7b94;
+}
+
+
+
+.card-body-outer .card-body .user-data{
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.card-body-outer .card-body .user-data a{
+    text-decoration: none;
+}
+
+.card-body-outer .card-body .user-data a img{
+    background-color: #cdd8e7;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+.user-data{
+    display: block;
+}
+
+.user-data-name{
+    display: inline-flex;
+}
+
+.user-data-name p{
+    left: inherit;
+    font-family: Arial;
+    color: #404040;
+    font-size: small
+}
