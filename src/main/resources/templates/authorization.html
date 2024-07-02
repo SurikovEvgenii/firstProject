@@ -38,34 +38,17 @@
                         <div class="group">
                             <input type="submit" class="button" value="Войти">
                         </div>
+                        <div class="group">
+                            <a type="button" class="button" th:href="@{/registration}">Зарегистрироваться</a>
+                        </div>
                         <div class="hr"></div>
-                        <div class="foot-lnk">
+                        <!--<div class="foot-lnk">
                             <a href="#forgot">Забыли пароль?</a>
-                        </div>
-                    </form>
-                </div>
-                <div class="sign-up-htm">
-                    <form th:method="post" th:action="@{/authorization}">
-                        <div class="group">
-                            <label for="login-designer" class="label">Логин</label>
-                            <input name="login" id="login-designer" type="text" class="input">
-                        </div>
-                        <div class="group">
-                            <label for="pass-designer" class="label">Пароль</label>
-                            <input name="password" id="pass-designer" type="password" class="input" data-type="password">
-                        </div>
-                        <!--<div class="group">
-                            <input id="check-designer" type="checkbox" class="check" checked>
-                            <label for="check-designer"><span class="icon"></span>Запомнить меня</label>
                         </div>-->
-                        <div class="group">
-                            <input type="submit" class="button" value="Войти">
-                        </div>
-                        <div class="hr"></div>
-                        <div class="foot-lnk">
-                            <a href="#forgot">Забыли пароль?</a>
-                        </div>
                     </form>
+
+
+
                 </div>
             </div>
         </div>
