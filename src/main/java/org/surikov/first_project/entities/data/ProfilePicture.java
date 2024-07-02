@@ -14,4 +14,7 @@ public class ProfilePicture {
 
     private String url;
 
+    @OneToOne
+    private DesignerAccount designerAccount;
+
 }
