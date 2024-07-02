@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.surikov.first_project.entities.projects.Project;
 import org.surikov.first_project.services.accounts.DesignerService;
+import org.surikov.first_project.services.data.CommentService;
 import org.surikov.first_project.services.data.PhotoService;
 import org.surikov.first_project.services.data.TagService;
 import org.surikov.first_project.services.projects.ProjectService;
@@ -20,17 +21,19 @@ import java.io.*;
 @Controller
 public class ProjectController {
 
+    private CommentService commentService;
     private PhotoService photoService;
     private TagService tagService;
     private ProjectService projectService;
     private DesignerService designerService;
 
     @Autowired
-    public ProjectController(PhotoService photoService, TagService tagService, ProjectService projectService, DesignerService designerService) {
+    public ProjectController(PhotoService photoService, TagService tagService, ProjectService projectService, DesignerService designerService, CommentService commentService) {
         this.photoService = photoService;
         this.tagService = tagService;
         this.projectService = projectService;
         this.designerService = designerService;
+        this.commentService = commentService;
     }
 
     @GetMapping("/create")
@@ -54,7 +57,7 @@ public class ProjectController {
             throw new RuntimeException(e);
         }
 
-        return "create";
+        return "redirect:/personal/designer/" + designerService.findDesignerByLogin(userDetails.getUsername()).getId();
     }
 
     @PostMapping("/project/delete/{id}")
@@ -73,13 +76,12 @@ public class ProjectController {
 
     @PostMapping("/project/update/{id}")
     public String updateProject(@PathVariable Long id, @ModelAttribute Project project, HttpServletRequest request){
-        String url = request.getHeader("Referer");
         Project projectUpdate = projectService.findById(id);
         projectUpdate.setHeader(project.getHeader());
         projectUpdate.setDescription(project.getDescription());
         projectUpdate.setShortDescription(project.getShortDescription());
         projectService.save(projectUpdate);
-        return "redirect:/personal/designer/"+project.getDesigner().getId();
+        return "redirect:/personal/designer/" + projectUpdate.getDesigner().getId();
     }
 
 }
