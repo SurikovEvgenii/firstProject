@@ -2,6 +2,7 @@ package org.surikov.first_project.entities.data;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.surikov.first_project.entities.accounts.DesignerAccount;
 import org.surikov.first_project.entities.accounts.UserAccount;
 import org.surikov.first_project.entities.projects.Project;
 
@@ -22,4 +23,7 @@ public class Comment {
 
     @ManyToOne
     private UserAccount userAccount;
+
+    @ManyToOne
+    private DesignerAccount designerAccount;
 }
