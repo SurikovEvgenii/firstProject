@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 @Service
@@ -42,19 +43,23 @@ public class PhotoService {
             Path filepathToDB = Paths.get( "images", "upload", project.getDesigner().getId().toString(), project.getId().toString(), file.getOriginalFilename());
 
             File directory = new File(filepath.getParent().toUri());
+
             if (!directory.exists()) {
                 directory.mkdirs();
             }
 
             bufferedImage = ImageIO.read(file.getInputStream());
             File outputFile = new File(filepath.toUri());
-            ImageIO.write(bufferedImage, "jpg", outputFile);
+
+            String type = file.getContentType().substring("image/".length());
+
+            ImageIO.write(bufferedImage, Objects.requireNonNull(type), outputFile);
 
 
             Photo photo = new Photo();
-            String filename = StringUtils.cleanPath(file.getOriginalFilename());
+            String filename = StringUtils.cleanPath(Objects.requireNonNull(file.getOriginalFilename()));
             photo.setName(filename);
-            photo.setUrl(filepathToDB.toUri().toString());
+            photo.setUrl("/images/upload/" + project.getDesigner().getId() + "/" + project.getId() + "/" + file.getOriginalFilename());
             photo.setProject(project);
             photoList.add(photo);
         }
