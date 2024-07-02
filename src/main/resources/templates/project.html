@@ -8,6 +8,7 @@
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" th:href="@{/css/card.css}"/>
     <link rel="stylesheet" th:href="@{/css/slider.css}">
+    <link rel="stylesheet" th:href="@{/css/comment-block.css}">
     <script type="text/javascript" th:src="@{/js/slider.js}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -66,17 +67,31 @@
                 <h5 class="card-title" th:text="${proj.header}">Заголовок</h5>
                 <p class="card-text" th:text="${proj.description}">Краткой описание</p>
                 <div class="card-buttons">
-                    <a type="button" th:href="@{designer/project/{id}(id=${proj.getId()})}">Прочитать</a>
+                    <a type="button" id="show-form-button">Комментировать</a>
                     <a type="button" class="like-button" th:data-id="${proj.getId()}" th:text="|Нравится ${proj.likesCount}|" sec:authorize="isAuthenticated()">Лайк</a>
                 </div>
             </div>
-
         </div>
     </div>
+    <div class="comment-form">
+        <form th:action="@{/comment/{id} (id=${project.getId()})}" th:method="post" th:object="${commentToForm}">
+            <input type="hidden" th:field="*{id}" value=""/>
+            <input type="text" class="comment-input" th:field="*{text}">
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+    <div class="wrap-comments">
+        <div class="comments" th:each="comm: ${comments}">
+
+            <p id="user" th:if="${comm.userAccount}!=null" th:text="|${comm.getUserAccount().getName()} ${comm.getUserAccount().getSurname()}|"></p>
+            <p id="designer" th:if="${comm.designerAccount}!=null" th:text="|${comm.getDesignerAccount().getName()} ${comm.getDesignerAccount().getSurname()}|"></p>
+
+            <p th:text="${comm.getText()}"></p>
+        </div>
+    </div>
+
 </div>
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script type="text/javascript" th:src="@{/js/ajax-like.js}"></script>
+<script th:src="@{/js/comment.js}"></script>
 </body>
 </html>
