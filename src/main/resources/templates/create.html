@@ -55,7 +55,7 @@
 
         <div>
             <label for="select-style">Выберите стиль</label>
-            <select id="select-style">
+            <select id="select-style" th:field="*{tag}">
                 <option th:each="tag: ${tags}" th:value="${tag.id}" th:text="${tag.tagName}"></option>
             </select>
         </div>
