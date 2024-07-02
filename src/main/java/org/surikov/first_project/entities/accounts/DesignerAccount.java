@@ -3,11 +3,10 @@ package org.surikov.first_project.entities.accounts;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import org.apache.catalina.User;
-import org.springframework.context.annotation.Profile;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.surikov.first_project.entities.data.Comment;
 import org.surikov.first_project.entities.data.ProfilePicture;
 import org.surikov.first_project.entities.data.Role;
 import org.surikov.first_project.entities.projects.Project;
@@ -50,6 +49,9 @@ public class DesignerAccount implements UserDetails {
 
     @OneToMany(mappedBy = "id", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Project> projectSet;
+
+    @OneToMany(mappedBy = "id", fetch = FetchType.EAGER)
+    private Set<Comment> commentSet;
 
     @ManyToOne
     private Role role;
