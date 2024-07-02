@@ -26,7 +26,7 @@
                     </div>
                     <div>
                         <div class="button" sec:authorize="!isAuthenticated()">
-                            <a th:href="@{/registration}">Зарегистрироваться</a>
+                            <a th:href="@{/authorization}">Войти</a>
                         </div>
                         <div class="button" sec:authorize="hasRole('DESIGNER')">
                             <a th:href="@{/personal/designer/{id}(id=${id})}">Личный кабинет</a>

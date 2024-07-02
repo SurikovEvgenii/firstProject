@@ -21,16 +21,7 @@
             border-radius: 5px;
             color: white;
         }
-        .style-tag{
-            z-index: 99;
-            position: absolute;
-            background-color: #65758f;
-            text-decoration-color: #cdd8e7;
-            margin: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            color: white;
-        }
+
     </style>
 </head>
 <body>
@@ -68,7 +59,7 @@
 
         <img th:src="@{{url}(url=${proj.getPhoto().getFirst().getUrl()})}" th:if="${proj.getPhoto().size()}==1">
 
-        <p id="text" class="style-tag" th:text="${proj.tag.getTagName()}"></p>
+        <p id="tag" class="style-tag" th:text="${proj.tag.getTagName()}"></p>
 
         <form th:method="post" th:action="@{/project/delete/{id}(id=${proj.getId()})}" style="z-index: 99">
             <button type="submit" style="
@@ -103,7 +94,7 @@
                         <img src="/images/profile.png" alt="logo">
                     </a>
                     <div class="user-data-name">
-                        <p th:text="|${proj.designer.name} ${proj.designer.surname}|" href="#"></p>
+                        <p th:text="|${proj.designer.name} ${proj.designer.surname}|"></p>
                     </div>
                 </div>
             </div>
