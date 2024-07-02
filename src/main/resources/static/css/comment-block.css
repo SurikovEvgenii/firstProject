@@ -1,0 +1,49 @@
+.comment-form{
+    display: none;
+    transition: 2s;
+}
+
+.comment-input{
+    margin: 37px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px;
+    background: #d5dae1;
+    width: -webkit-fill-available;
+}
+
+.wrap-comments{
+    margin: 20px;
+}
+
+.comments{
+    border-top: #eaeaea;
+    border-top-style: solid;
+}
+
+.comments p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.comments #user,
+.comments #designer{
+    font-weight: bold;
+}
+
+.comment-form button{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 80px;
+    padding-right: 80px;
+    border-radius: 50px;
+    background-color: #404b5a;
+    border-style: none;
+    color: white;
+    width: -webkit-fill-available;
+    margin-left: 40px;
+    margin-right: 40px;
+}
