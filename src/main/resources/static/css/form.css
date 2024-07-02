@@ -6,7 +6,8 @@ body{
 *,:after,:before{box-sizing:border-box}
 .clearfix:after,.clearfix:before{content:'';display:table}
 .clearfix:after{clear:both;display:block}
-a{color:inherit;text-decoration:none}
+a{color:inherit;text-decoration:none; font: -webkit-control;
+    text-align: center;}
 
 .wrap{
     display: flex;
@@ -48,7 +49,7 @@ a{color:inherit;text-decoration:none}
 }
 .login-html .tab,
 .login-form .group .label,
-.login-form .group .button{
+.login-form .group .button {
     text-transform:uppercase;
 }
 .login-html .tab{
@@ -97,6 +98,12 @@ a{color:inherit;text-decoration:none}
 .login-form .group .button{
     background: #404b5a;
 }
+
+.login-form .group .button:hover{
+    transition: 1s;
+    background: #6f819a;
+}
+
 .login-form .group label .icon{
     width:15px;
     height:15px;
