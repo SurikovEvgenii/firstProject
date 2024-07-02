@@ -31,6 +31,7 @@
 
 .card-body-outer .card-body .card-buttons a:hover{
     transition: 0.3s;
+    color: white;
     background-color: #6a7b94;
 }
 
@@ -70,7 +71,7 @@
 #tag{
     z-index: 99;
     position: absolute;
-    background-color: #65758f;
+    background-color: #404b5a;
     text-decoration-color: #cdd8e7;
     margin: 20px;
     padding: 10px;
