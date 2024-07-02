@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import org.surikov.first_project.entities.data.Comment;
 import org.surikov.first_project.repository.data.CommentRepository;
 
+import java.util.List;
+
 @Service
 public class CommentService {
 
@@ -13,6 +15,10 @@ public class CommentService {
     @Autowired
     public CommentService(CommentRepository commentRepository) {
         this.commentRepository = commentRepository;
+    }
+
+    public List<Comment> findByProjectId(Long projectId) {
+        return commentRepository.findByProjectId(projectId);
     }
 
     public void save(Comment comment) {
