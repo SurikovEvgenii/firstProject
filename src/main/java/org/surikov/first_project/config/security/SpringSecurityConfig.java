@@ -35,7 +35,8 @@ public class SpringSecurityConfig {
                     .requestMatchers("/personal/user/**").hasRole("USER")
                     .requestMatchers("/designer/**").hasAnyRole("USER","DESIGNER")
                     .requestMatchers("/like").hasAnyRole("USER","DESIGNER")
-                    .requestMatchers("/create").hasRole("DESIGNER");
+                    .requestMatchers("/create").hasRole("DESIGNER")
+                    .requestMatchers("/comment/**").hasAnyRole("USER","DESIGNER");
 
         });
 
