@@ -43,10 +43,10 @@
                 padding-bottom: 50px;
                 background: aliceblue;
                 padding-left: 50px;">
-        <img style="width: 100px; border-style: solid; border-color: #cdd8e7; border-radius: 10px;"
+        <img style="width: 130px; border-style: solid; border-color: #cdd8e7; border-radius: 10px;"
              th:src="@{/images/profile.png}">
         <div style="display: inline-flex">
-            <p th:text="|${designer.getName} ${designer.getSurname}|"></p>
+            <p style="margin: 10px" th:text="|${designer.getName} ${designer.getSurname}|"></p>
         </div>
         <div>
             <p th:text="${designer.getCountFollowers}"></p>
