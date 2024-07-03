@@ -27,6 +27,7 @@
     max-height: fit-content;
     padding: 10px;
     border-radius: 5px;
+    transition: 0.5s ease-out;
 }
 
 .card-body-outer .card-body .card-buttons a:hover{
@@ -34,8 +35,6 @@
     color: white;
     background-color: #6a7b94;
 }
-
-
 
 .card-body-outer .card-body .user-data{
     padding-top: 5px;
