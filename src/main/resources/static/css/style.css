@@ -19,6 +19,7 @@ header .button{
     padding-right: 80px;
     border-radius: 50px;
     background-color: #404b5a;
+    transition: 0.5s ease-out;
 }
 
 header .button:hover{
