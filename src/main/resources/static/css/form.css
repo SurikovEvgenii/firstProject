@@ -53,15 +53,22 @@ a{color:inherit;text-decoration:none; font: -webkit-control;
     text-transform:uppercase;
 }
 .login-html .tab{
-    padding-bottom: 30px;
-    margin: 0px 15px 20px 40px;
+    padding: 15px;
     display: inline-block;
     color: #6a7b94;
+    text-align: center;
+    color: white;
+    margin: -10px 15px 39px 20px;
+    border-radius: 50px;
+    background-color: #404b5a;
+    transition: 0.5s ease-out;
 }
 .login-html .sign-in:checked + .tab,
 .login-html .sign-up:checked + .tab{
-    color:#404b5a;
+    color:white;
     border-color:#404b5a;
+    transition: 0.3s;
+    background-color: #6a7b94;
 }
 .login-form{
     min-height:1000px;
@@ -76,7 +83,6 @@ a{color:inherit;text-decoration:none; font: -webkit-control;
 .login-form .group .input,
 .login-form .group .button{
     width:100%;
-    color: #ffffff;
     display:block;
 }
 .login-form .group .input,
@@ -97,6 +103,8 @@ a{color:inherit;text-decoration:none; font: -webkit-control;
 }
 .login-form .group .button{
     background: #404b5a;
+    color: white;
+    transition: 0.5s ease-out;
 }
 
 .login-form .group .button:hover{
