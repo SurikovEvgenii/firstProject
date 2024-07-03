@@ -11,7 +11,7 @@
     <div class="login-wrap">
         <div style="padding-top:50px ;background: white">
             <a th:href="@{/}">
-                <img style="width: 380px; display: block; margin: 0 auto;" th:src="@{/images/logo.png}" alt="Interiera" >
+                <img style="width: 380px; display: block; margin: 0 auto;" th:src="@{/images/logo.png}" alt="Interiera">
             </a>
 
         </div>
@@ -31,24 +31,14 @@
                             <label for="user-pass" class="label">Пароль</label>
                             <input name="password" id="user-pass" type="password" class="input" data-type="password">
                         </div>
-                        <!--<div class="group">
-                            <input id="check-user" type="checkbox" class="check" checked>
-                            <label for="check-user"><span class="icon"></span>Запомнить меня</label>
-                        </div>-->
-                        <div class="group">
+                        <div class="group" style="margin-top: 60px">
                             <input type="submit" class="button" value="Войти">
                         </div>
                         <div class="group">
                             <a type="button" class="button" th:href="@{/registration}">Зарегистрироваться</a>
                         </div>
                         <div class="hr"></div>
-                        <!--<div class="foot-lnk">
-                            <a href="#forgot">Забыли пароль?</a>
-                        </div>-->
                     </form>
-
-
-
                 </div>
             </div>
         </div>
