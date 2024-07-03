@@ -1,24 +1,29 @@
-INSERT INTO style_tags(tag_name) VALUES ('Минимализм');
+INSERT INTO style_tags(tag_name) VALUES ('Современный');
+INSERT INTO style_tags(tag_name) VALUES ('Скандинавский');
 INSERT INTO style_tags(tag_name) VALUES ('Лофт');
+INSERT INTO style_tags(tag_name) VALUES ('Классический');
+INSERT INTO style_tags(tag_name) VALUES ('Минимализм');
+INSERT INTO style_tags(tag_name) VALUES ('Средиземноморский');
+INSERT INTO style_tags(tag_name) VALUES ('Бохо');
+INSERT INTO style_tags(tag_name) VALUES ('Рустик');
+INSERT INTO style_tags(tag_name) VALUES ('Винтаж');
+INSERT INTO style_tags(tag_name) VALUES ('Эклектика');
+INSERT INTO style_tags(tag_name) VALUES ('Индастриал');
+INSERT INTO style_tags(tag_name) VALUES ('Фьюжн');
+INSERT INTO style_tags(tag_name) VALUES ('Традиционный');
+INSERT INTO style_tags(tag_name) VALUES ('Тропический');
+INSERT INTO style_tags(tag_name) VALUES ('Французский провинциальный');
+INSERT INTO style_tags(tag_name) VALUES ('Морской');
+INSERT INTO style_tags(tag_name) VALUES ('Арт-деко');
+INSERT INTO style_tags(tag_name) VALUES ('Модерн');
+INSERT INTO style_tags(tag_name) VALUES ('Голливудский гламур');
+INSERT INTO style_tags(tag_name) VALUES ('Колониальный');
+INSERT INTO style_tags(tag_name) VALUES ('Шебби-шик');
+INSERT INTO style_tags(tag_name) VALUES ('Азиатский');
+INSERT INTO style_tags(tag_name) VALUES ('Юго-западный');
+INSERT INTO style_tags(tag_name) VALUES ('Готический');
+INSERT INTO style_tags(tag_name) VALUES ('Ретро');
 
 INSERT INTO roles(role) VALUES ('ADMIN');
 INSERT INTO roles(role) VALUES ('USER');
 INSERT INTO roles(role) VALUES ('DESIGNER');
-
-/*
-INSERT INTO user_accounts(login, password, name, surname, email, number, role_id)
-VALUES('Test','Test','Name','Surname','test@test.ru','899999999999', 2);
-
-INSERT INTO user_accounts(login, password, name, surname, email, number, role_id)
-VALUES('Test1','Test1','Name1','Surname1','test1@test.ru','899999999998', 2);
-
-INSERT INTO designers(login, password, name, surname, number, email, telegram, whatsapp, role_id)
-VALUES ('TestDis', 'testdis', 'Алина', 'Кузьмина', '87777777777', 'testdis@test.ru', 'telegram', 'whatsapp', 3);
-
-INSERT INTO projects(header, short_description, description, tag_id, designer_id)
-VALUES ('Интерьер в скандинавском стиле','Просто тестовое описание интерьера', 'Test Description', 1, 1);
-
-INSERT INTO projects(header, short_description, description, tag_id, designer_id)
-VALUES ('Интерьер в минималистике','Ну в кратце сказать о нем', 'Test Description 1', 1, 1);
-
-INSERT INTO comments(project_id, user_account_id, text) VALUES (1,1,'Test Text');*/
