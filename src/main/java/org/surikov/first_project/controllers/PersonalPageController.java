@@ -32,6 +32,7 @@ public class PersonalPageController {
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Long checkId = designerService.findDesignerByLogin(userDetails.getUsername()).getId();
         model.addAttribute("project", projectService.findByDesignerId(checkId));
+        model.addAttribute("designer", designerService.findById(id));
         if(checkId.equals(id)){
             return "personal";
         } else {
