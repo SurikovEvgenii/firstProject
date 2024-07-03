@@ -45,9 +45,26 @@
 </header>
 <div class="sub-header"></div>
 
+<div style="max-width: 800px;
+                margin: auto;
+                padding-top: 50px;
+                padding-bottom: 50px;
+                background: aliceblue;
+                padding-left: 50px;">
+    <img style="width: 130px; border-style: solid; border-color: #cdd8e7; border-radius: 10px;"
+         th:src="@{/images/profile.png}">
+    <div style="display: inline-flex">
+        <p style="margin: 10px" th:text="|${designer.getName} ${designer.getSurname}|"></p>
+    </div>
+    <div>
+        <p th:text="${designer.getCountFollowers}"></p>
+    </div>
+    <div>
+        <a type="button" th:href="@{/create}" sec:authorize="hasRole('DESIGNER')" class="button-custom">Добавить проект</a>
+    </div>
+</div>
 
 
-<a type="button" th:href="@{/create}" sec:authorize="hasRole('DESIGNER')" class="button-custom">Добавить проект</a>
 
 <div class="card-body-outer" th:each="proj: ${project}" sec:authorize="hasRole('DESIGNER')">
     <div class="card">
@@ -61,30 +78,8 @@
 
         <p id="tag" class="style-tag" th:text="${proj.tag.getTagName()}"></p>
 
-        <form th:method="post" th:action="@{/project/delete/{id}(id=${proj.getId()})}" style="z-index: 99">
-            <button type="submit" style="
-                                position: unset;
-                                background-color: #65758f;
-                                text-decoration-color: #cdd8e7;
-                                text-decoration-line: none;
-                                text-align: center;
-                                margin: 20px;
-                                padding: 10px;
-                                border-radius: 5px;
-                                color: white;
-                                width: -webkit-fill-available;
-                                border-style: none;">Удалить проект</button>
-        </form>
-            <a type="button" th:href="@{/project/update/{id}(id=${proj.getId()})}" style="z-index: 99;
-                                position: unset;
-                                background-color: #65758f;
-                                text-decoration-color: #cdd8e7;
-                                text-decoration-line: none;
-                                text-align: center;
-                                margin: 20px;
-                                padding: 10px;
-                                border-radius: 5px;
-                                color: white;">Редактировать проект</a>
+
+
 
 
         <div class="card-body">
@@ -101,9 +96,21 @@
             <div>
                 <h5 class="card-title" th:text="${proj.header}">Заголовок</h5>
                 <p class="card-text" th:text="${proj.shortDescription}">Краткой описание</p>
-                <div class="card-buttons">
-                    <a type="button" th:href="@{designer/project/{id}(id=${proj.getId()})}">Прочитать</a>
-                    <a type="button" class="like-button" th:data-id="${proj.getId()}" th:text="|Нравится ${proj.likesCount}|" sec:authorize="isAuthenticated()">Лайк</a>
+                <div class="card-buttons" style="display: ruby;">
+                    <a type="button" th:href="@{/project/update/{id}(id=${proj.getId()})}">Редактировать</a>
+                    <a type="button" th:href="@{/designer/project/{id}(id=${proj.getId()})}">Прочитать</a>
+                    <a type="button" class="like-button" th:data-id="${proj.getId()}" th:text="|Лайки: ${proj.likesCount}|" sec:authorize="isAuthenticated()">Лайк</a>
+                    <form th:method="post" th:action="@{/project/delete/{id}(id=${proj.getId()})}" style="z-index: 99">
+                        <button type="submit" style="
+                                background-color: #65758f;
+                                text-decoration-color: #cdd8e7;
+                                text-decoration-line: none;
+                                text-align: center;
+                                padding: 10px;
+                                border-radius: 5px;
+                                color: white;
+                                border-style: none;">Удалить проект</button>
+                    </form>
                 </div>
             </div>
 
