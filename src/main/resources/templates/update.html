@@ -6,13 +6,17 @@
     <link rel="stylesheet" th:href="@{/css/form.css}">
     <title>Интерьера</title>
     <style>
+        body{
+            margin: 0 auto;
+        }
+
         label{
             display: block;
             color: #404b5a;
             font-size: 12px;
             margin: inherit;
         }
-        input{
+        input, textarea{
             margin: 10px;
             font-family: inherit;
             font-size: inherit;
@@ -22,6 +26,16 @@
             border-radius: 25px;
             background: #d5dae1;
         }
+
+        input{
+            width: 500px;
+        }
+
+        textarea{
+            width: 500px;
+            height: 200px;
+        }
+
         button{
             padding-top: 5px;
             margin-top: 20px;
@@ -33,6 +47,57 @@
             border-style: none;
             color: white;
         }
+
+        form{
+            padding: 50px;
+        }
+
+        input[type=file]::file-selector-button {
+            margin-right: 20px;
+            border: none;
+            background: #404b5a;
+            padding: 10px 20px;
+            border-radius: 10px;
+            color: #fff;
+            cursor: pointer;
+            transition: background .2s ease-in-out;
+        }
+
+        input[type=file]::file-selector-button:hover {
+            background: #6a7b94;
+        }
+
+        select{
+            margin-bottom: 20px;
+            margin-top: 10px;
+            width: 510px;
+            height: 30px;
+            border-radius: 30px;
+            text-align: center;
+            background-color: #404b5a;
+            border-style: none;
+            color: white;
+        }
+
+        h2{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        body{
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            font: 600 16px / 18px 'Open Sans', sans-serif;
+        }
+
+        #submit-button{
+            width: 520px;
+            height: 50px;
+        }
+
     </style>
 </head>
 <body>
@@ -47,15 +112,15 @@
 
     <div>
         <label for="short-description">Краткое описание</label>
-        <input th:field="*{shortDescription}" id="short-description" type="text" maxlength="200">
+        <textarea th:field="*{shortDescription}" id="short-description" type="text" maxlength="200"></textarea>
     </div>
 
     <div>
         <label for="description">Описание</label>
-        <input th:field="*{description}" id="description" type="text" maxlength="1000">
+        <textarea th:field="*{description}" id="description" type="text" maxlength="1000"></textarea>
     </div>
 
-    <button type="submit" value="Создать">Редактировать</button>
+    <button id="submit-button" type="submit" value="Создать">Редактировать</button>
 
 </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
