@@ -40,7 +40,6 @@ public class PhotoService {
         for(MultipartFile file: files){
             Path root = FileSystems.getDefault().getPath("").toAbsolutePath();
             Path filepath = Paths.get(root.toString(), "src", "main", "resources","static", "images", "upload", project.getDesigner().getId().toString(), project.getId().toString(), file.getOriginalFilename());
-            Path filepathToDB = Paths.get( "images", "upload", project.getDesigner().getId().toString(), project.getId().toString(), file.getOriginalFilename());
 
             File directory = new File(filepath.getParent().toUri());
 

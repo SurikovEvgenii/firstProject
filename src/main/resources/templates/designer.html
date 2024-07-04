@@ -17,7 +17,7 @@
         <nav class="navbar bg-body-tertiary">
             <div class="container">
                 <div style="padding-left: 20px;">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" th:href="@{/}">
                         <img src="/images/logo.png" alt="Interiera" >
                     </a>
                 </div>
@@ -55,23 +55,24 @@
 
     <div class="card-body-outer" th:each="proj: ${project}">
         <div class="card">
+
             <div class="slider" th:if="${proj.getPhoto().size()}>1">
                 <button class="prev"><</button>
                 <button class="next">></button>
                 <img th:each="image,iterstat: ${proj.getPhoto()}" th:src="@{{url}(url=${image.getUrl()})}" th:class="${iterstat.first}? 'active'">
             </div>
 
-            <img th:src="@{{url}(url=${proj.getPhoto().getFirst().getUrl()})}" th:if="${proj.getPhoto().size()}==1">
+            <img th:if="${proj.getPhoto().size()}==1" th:src="@{{url}(url=${proj.getPhoto().getFirst().getUrl()})}">
 
             <p id="tag" th:text="${proj.tag.getTagName()}"></p>
             <div class="card-body">
                 <div class="user-data-wrap">
                     <div class="user-data">
-                        <a th:href="@{designer/{id}(id=${proj.getDesigner.getId})}">
+                        <a th:href="@{/designer/{id}(id=${proj.getDesigner.getId})}">
                             <img src="/images/profile.png" alt="logo">
                         </a>
                         <div class="user-data-name">
-                            <p th:text="|${proj.designer.name} ${proj.designer.surname}|" th:href="@{designer/{id}(id=${proj.getDesigner.getId})}"></p>
+                            <p th:text="|${proj.designer.name} ${proj.designer.surname}|" th:href="@{/designer/{id}(id=${proj.getDesigner.getId})}"></p>
                         </div>
                     </div>
                 </div>
@@ -79,7 +80,7 @@
                     <h5 class="card-title" th:text="${proj.header}">Заголовок</h5>
                     <p class="card-text" th:text="${proj.shortDescription}">Краткой описание</p>
                     <div class="card-buttons">
-                        <a type="button" th:href="@{designer/project/{id}(id=${proj.getId()})}">Прочитать</a>
+                        <a type="button" th:href="@{/designer/project/{id}(id=${proj.getId()})}">Прочитать</a>
                         <a type="button" class="like-button" th:data-id="${proj.getId()}" th:text="|Нравится ${proj.likesCount}|" sec:authorize="isAuthenticated()">Лайк</a>
                     </div>
                 </div>

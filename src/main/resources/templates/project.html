@@ -55,11 +55,11 @@
         <div class="card-body">
             <div class="user-data-wrap">
                 <div class="user-data">
-                    <a th:href="@{designer/{id}(id=${proj.getDesigner.getId})}">
+                    <a th:href="@{/designer/{id}(id=${proj.getDesigner.getId})}">
                         <img src="/images/profile.png" alt="logo">
                     </a>
                     <div class="user-data-name">
-                        <p th:text="|${proj.designer.name} ${proj.designer.surname}|" th:href="@{designer/{id}(id=${proj.getDesigner.getId})}"></p>
+                        <p th:text="|${proj.designer.name} ${proj.designer.surname}|" th:href="@{/designer/{id}(id=${proj.getDesigner.getId})}"></p>
                     </div>
                 </div>
             </div>
