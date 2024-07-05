@@ -42,7 +42,6 @@ public class PersonalPageController {
         } else {
             return "redirect:/personal/designer/"+checkId;
         }
-
     }
 
     @GetMapping("/user/{id}")
