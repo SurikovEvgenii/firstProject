@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="_csrf" th:content="${_csrf.token}"/>
     <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
+
     <title>Интерьера</title>
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" th:href="@{/css/card.css}"/>
@@ -41,34 +42,35 @@
 </header>
 <div class="sub-header"></div>
 
-<div class="card-body-outer" th:each="proj: ${project}">
+<div class="card-body-outer">
     <div class="card">
-        <div class="slider" th:if="${proj.getPhoto().size()}>1">
+        <div class="slider" th:if="${project.getPhoto().size()}>1">
             <button class="prev"><</button>
             <button class="next">></button>
-            <img th:each="image,iterstat: ${proj.getPhoto()}" th:src="@{{url}(url=${image.getUrl()})}" th:class="${iterstat.first}? 'active'">
+            <img th:each="image,iterstat: ${project.getPhoto()}" th:src="@{{url}(url=${image.getUrl()})}" th:class="${iterstat.first}? 'active'">
         </div>
 
-        <img th:src="@{{url}(url=${proj.getPhoto().getFirst().getUrl()})}" th:if="${proj.getPhoto().size()}==1">
+        <img th:src="@{{url}(url=${project.getPhoto().getFirst().getUrl()})}" th:if="${project.getPhoto().size()}==1">
 
-        <p id="tag" th:text="${proj.tag.getTagName()}"></p>
+        <p id="tag" th:text="${project.tag.getTagName()}"></p>
         <div class="card-body">
             <div class="user-data-wrap">
                 <div class="user-data">
-                    <a th:href="@{/designer/{id}(id=${proj.getDesigner.getId})}">
-                        <img src="/images/profile.png" alt="logo">
+                    <a th:href="@{/designer/{id}(id=${project.designer.id})}">
+                        <img alt="Not found" th:if="${project.designer.profilePicture!=null}" th:src="${project.designer.profilePicture.url}">
+                        <img alt="Not found" th:if="${project.designer.profilePicture==null}" src="/images/profile.png">
                     </a>
                     <div class="user-data-name">
-                        <p th:text="|${proj.designer.name} ${proj.designer.surname}|" th:href="@{/designer/{id}(id=${proj.getDesigner.getId})}"></p>
+                        <p th:text="|${project.designer.name} ${project.designer.surname}|" th:href="@{/designer/{id}(id=${project.getDesigner.getId})}"></p>
                     </div>
                 </div>
             </div>
             <div>
-                <h5 class="card-title" th:text="${proj.header}">Заголовок</h5>
-                <p class="card-text" th:text="${proj.description}">Краткой описание</p>
+                <h5 class="card-title" th:text="${project.header}">Заголовок</h5>
+                <p class="card-text" th:text="${project.description}">Краткой описание</p>
                 <div class="card-buttons">
                     <a type="button" id="show-form-button">Комментировать</a>
-                    <a type="button" class="like-button" th:data-id="${proj.getId()}" th:text="|Нравится ${proj.likesCount}|" sec:authorize="isAuthenticated()">Лайк</a>
+                    <a type="button" class="like-button" th:data-id="${project.getId()}" th:text="|Нравится ${project.likesCount}|" sec:authorize="isAuthenticated()">Лайк</a>
                 </div>
             </div>
         </div>
@@ -81,16 +83,16 @@
         </form>
     </div>
     <div class="wrap-comments">
-        <div class="comments" th:each="comm: ${comments}">
+        <div class="comments" th:each="comm:${comments}">
 
-            <p id="user" th:if="${comm.userAccount}!=null" th:text="|${comm.getUserAccount().getName()} ${comm.getUserAccount().getSurname()}|"></p>
+            <p id="user" th:if="${comm.userAccount}!=null" th:text="|${comm.userAccount.name} ${comm.userAccount.surname}|"></p>
             <p id="designer" th:if="${comm.designerAccount}!=null" th:text="|${comm.getDesignerAccount().getName()} ${comm.getDesignerAccount().getSurname()}|"></p>
 
             <p th:text="${comm.getText()}"></p>
         </div>
     </div>
-
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script th:src="@{/js/comment.js}"></script>
 </body>
