@@ -15,6 +15,8 @@ import org.surikov.first_project.services.accounts.UserService;
 import org.surikov.first_project.services.data.CommentService;
 import org.surikov.first_project.services.projects.ProjectService;
 
+import java.util.List;
+
 @Controller
 public class BaseController {
 
@@ -73,11 +75,16 @@ public class BaseController {
 
     @GetMapping("/designer/project/{id}")
     public String projectPage(@PathVariable Long id, Model model){
+
         Comment comment = new Comment();
-        model.addAttribute("project", projectService.findById(id));
-        model.addAttribute("comments", commentService.findByProjectId(id));
+        Project project = projectService.findById(id);
+        List<Comment> comments = commentService.findByProjectId(id);
+
+        model.addAttribute("project", project);
+        model.addAttribute("comments", comments);
         model.addAttribute("commentToForm", comment);
         return "project";
+
     }
 
     @PostMapping("/comment/{id}")
