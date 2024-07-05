@@ -77,19 +77,20 @@ public class DesignerAccount implements UserDetails {
     @Override
     public String toString() {
         return "DesignerAccount{" +
-                "role=" + role +
-                ", commentSet=" + commentSet +
-                ", projectSet=" + projectSet +
-                ", countFollowers=" + countFollowers +
-                ", whatsapp='" + whatsapp + '\'' +
-                ", telegram='" + telegram + '\'' +
-                ", email='" + email + '\'' +
-                ", number='" + number + '\'' +
-                ", surname='" + surname + '\'' +
-                ", name='" + name + '\'' +
-                ", password='" + password + '\'' +
+                "id=" + id +
                 ", login='" + login + '\'' +
-                ", id=" + id +
+                ", password='" + password + '\'' +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", number='" + number + '\'' +
+                ", email='" + email + '\'' +
+                ", telegram='" + telegram + '\'' +
+                ", whatsapp='" + whatsapp + '\'' +
+                ", countFollowers=" + countFollowers +
+                ", projectSet=" + projectSet +
+                ", commentSet=" + commentSet +
+                ", role=" + role +
+                ", profilePicture=" + profilePicture +
                 '}';
     }
 
