@@ -9,5 +9,8 @@ fileInput.addEventListener('change', event => {
     );
     console.log(files);
 
-    // Your code for uploading the file to the remote server (e.g. AWS S3)
 });
+
+document.getElementById("photo").onchange = function() {
+    document.getElementById("form").submit();
+};
