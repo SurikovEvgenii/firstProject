@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.surikov.first_project.entities.accounts.UserAccount;
 import org.surikov.first_project.repository.accounts.UserRepository;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -17,8 +18,8 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public Set<UserAccount> findAll(){
-        return (Set<UserAccount>) userRepository.findAll();
+    public List<UserAccount> findAll(){
+        return (List<UserAccount>)userRepository.findAll();
     }
 
     public void save(UserAccount userAccount){
