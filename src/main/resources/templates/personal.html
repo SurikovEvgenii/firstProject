@@ -47,6 +47,17 @@
             background-color: #eee;
         }
 
+        .designer-card{
+            max-width: 800px;
+            margin: auto;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            background: aliceblue;
+            padding-left: 50px;
+            display: flex;
+            align-items: center;
+        }
+
 
 
     </style>
@@ -72,14 +83,7 @@
 </header>
 <div class="sub-header"></div>
 
-<div style="max-width: 800px;
-    margin: auto;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background: aliceblue;
-    padding-left: 50px;
-    display: flex;
-    align-items: center;">
+<div class="designer-card">
 
         <img th:if="${designer.profilePicture!=null}" style="width: 130px; border-style: solid; border-color: #cdd8e7; border-radius: 80px;"
         th:src="${designer.profilePicture.url}">
