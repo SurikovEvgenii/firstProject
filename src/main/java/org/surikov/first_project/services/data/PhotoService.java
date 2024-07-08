@@ -23,12 +23,10 @@ import java.util.stream.Stream;
 public class PhotoService {
 
     private PhotoRepository photoRepository;
-    private ProjectRepository projectRepository;
 
     @Autowired
-    public PhotoService(PhotoRepository photoRepository, ProjectRepository projectRepository) {
+    public PhotoService(PhotoRepository photoRepository) {
         this.photoRepository = photoRepository;
-        this.projectRepository = projectRepository;
     }
 
     public void save(MultipartFile[] files, Project project) throws IOException {
@@ -62,7 +60,6 @@ public class PhotoService {
             photo.setProject(project);
             photoList.add(photo);
         }
-
         photoRepository.saveAll(photoList);
 
     }
