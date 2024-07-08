@@ -46,13 +46,9 @@ public class ProfilePictureService {
                 }
 
                 bufferedImage = ImageIO.read(file.getInputStream());
-
                 File outputFile = new File(filepath.toUri());
-
                 String type = file.getContentType().substring("image/".length());
-
                 ImageIO.write(bufferedImage, Objects.requireNonNull(type), outputFile);
-
                 ProfilePicture photo = new ProfilePicture();
 
                 String filename = StringUtils.cleanPath(Objects.requireNonNull(file.getOriginalFilename()));
@@ -71,7 +67,5 @@ public class ProfilePictureService {
                 e.printStackTrace();
             }
         }
-
-
     }
 }
