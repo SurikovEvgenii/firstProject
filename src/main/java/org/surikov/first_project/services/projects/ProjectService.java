@@ -13,12 +13,10 @@ import java.util.Optional;
 public class ProjectService {
 
     private ProjectRepository projectRepository;
-    private PhotoRepository photoRepository;
 
     @Autowired
-    public ProjectService(ProjectRepository projectRepository, PhotoRepository photoRepository) {
+    public ProjectService(ProjectRepository projectRepository) {
         this.projectRepository = projectRepository;
-        this.photoRepository = photoRepository;
     }
 
     public ArrayList<Project> findAll() {
