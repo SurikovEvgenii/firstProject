@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <title>Интерьера</title>
+</head>
+<body>
+<header>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container">
+            <div style="padding-left: 20px;">
+                <a class="navbar-brand" th:href="@{/}">
+                    <img src="/images/logo.png" alt="Interiera" >
+                </a>
+            </div>
+            <div>
+                <div class="button" sec:authorize="!isAuthenticated()">
+                    <a type="button" th:href="@{/registration}">Зарегистрироваться</a>
+                </div>
+                <div class="button" sec:authorize="hasRole('DESIGNER')">
+                    <a type="button" th:href="@{/personal/designer/{id}(id=${id})}">Личный кабинет</a>
+                </div>
+                <div class="button" sec:authorize="hasRole('USER')">
+                    <a type="button" th:href="@{/personal/user/{id}(id=${id})}">Личный кабинет</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="sub-header"></div>
+
+<div>
+
+
+</div>
+</body>
+</html>
