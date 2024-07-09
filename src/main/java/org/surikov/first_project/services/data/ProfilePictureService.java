@@ -4,7 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
+import org.surikov.first_project.entities.accounts.DesignerAccount;
 import org.surikov.first_project.entities.data.ProfilePicture;
+import org.surikov.first_project.repository.accounts.DesignerRepository;
 import org.surikov.first_project.repository.data.ProfilePictureRepository;
 import org.surikov.first_project.services.accounts.DesignerService;
 
@@ -20,13 +22,19 @@ import java.util.Objects;
 @Service
 public class ProfilePictureService {
 
+    private final DesignerRepository designerRepository;
     private ProfilePictureRepository pictureRepository;
     private DesignerService designerService;
 
     @Autowired
-    public ProfilePictureService(ProfilePictureRepository pictureRepository, DesignerService designerService) {
+    public ProfilePictureService(ProfilePictureRepository pictureRepository, DesignerService designerService, DesignerRepository designerRepository) {
         this.pictureRepository = pictureRepository;
         this.designerService = designerService;
+        this.designerRepository = designerRepository;
+    }
+
+    public ProfilePicture findById(Long id) {
+        return pictureRepository.findById(id).get();
     }
 
     public void save(MultipartFile[] files, Long designerId) {

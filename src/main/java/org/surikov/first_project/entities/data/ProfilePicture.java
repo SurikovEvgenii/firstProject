@@ -18,7 +18,6 @@ public class ProfilePicture {
     private String url;
 
     @OneToOne
-    @JoinColumn(name = "designer_account_id")
     private DesignerAccount designerAccount;
 
     @Override

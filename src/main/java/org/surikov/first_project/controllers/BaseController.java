@@ -13,6 +13,7 @@ import org.surikov.first_project.entities.projects.Project;
 import org.surikov.first_project.services.accounts.DesignerService;
 import org.surikov.first_project.services.accounts.UserService;
 import org.surikov.first_project.services.data.CommentService;
+import org.surikov.first_project.services.data.PhotoService;
 import org.surikov.first_project.services.projects.ProjectService;
 
 import java.util.List;
@@ -24,13 +25,14 @@ public class BaseController {
     private ProjectService projectService;
     private DesignerService designerService;
     private UserService userService;
+    private PhotoService photoService;
 
-    @Autowired
-    public BaseController(ProjectService projectService, DesignerService designerService, UserService userService, CommentService commentService) {
+    public BaseController(CommentService commentService, ProjectService projectService, DesignerService designerService, UserService userService, PhotoService photoService) {
+        this.commentService = commentService;
         this.projectService = projectService;
         this.designerService = designerService;
         this.userService = userService;
-        this.commentService = commentService;
+        this.photoService = photoService;
     }
 
     @GetMapping("/")
@@ -52,7 +54,7 @@ public class BaseController {
 
         } catch (Exception e){}
 
-        model.addAttribute("project", projectService.findAll());
+        model.addAttribute("project", projectService.findAllRandom());
 
         return "index";
     }
