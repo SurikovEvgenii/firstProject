@@ -6,6 +6,7 @@
     <meta name="_csrf" th:content="${_csrf.token}"/>
     <meta name="_csrf_header" th:content="${_csrf.headerName}"/>
     <title>Интерьера</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     <link rel="stylesheet" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" th:href="@{/css/card.css}"/>
     <link rel="stylesheet" th:href="@{/css/slider.css}">
@@ -131,10 +132,10 @@
                 <a id="telephone" type="button" th:href="|tel:${designer.number}|">Позвонить</a>
             </div>
             <div class="button-custom">
-                <a id="telegram" type="button" th:href="|https://t.me/${designer.telegram}|">Telegram</a>
+                <a id="telegram" type="button" th:href="|https://t.me/${designer.telegram}|" target="_blank">Telegram</a>
             </div>
             <div class="button-custom">
-                <a id="whatsapp" type="button" th:href="|whatsapp://send?phone=${designer.whatsapp}|">WhatsApp</a>
+                <a id="whatsapp" type="button" th:href="|https://wa.me/${designer.whatsapp}?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!|">WhatsApp</a>
             </div>
         </div>
 
@@ -142,13 +143,13 @@
 
     <div class="card-body-outer" th:each="proj: ${project}">
         <div class="card">
-            <div class="slider" th:if="${proj.getPhoto().size()}>1">
+            <div class="slider" th:if="${proj.photoList.size()}>1">
                 <button class="prev"><</button>
                 <button class="next">></button>
-                <img th:each="image,iterstat: ${proj.getPhoto()}" th:src="@{{url}(url=${image.getUrl()})}" th:class="${iterstat.first}? 'active'">
+                <img th:each="image,iterstat: ${proj.photoList}" th:src="@{{url}(url=${image.getUrl()})}" th:class="${iterstat.first}? 'active'">
             </div>
 
-            <img th:src="@{{url}(url=${proj.getPhoto().getFirst().getUrl()})}" th:if="${proj.getPhoto().size()}==1">
+            <img th:src="@{{url}(url=${proj.photoList.first.url})}" th:if="${proj.photoList.size()}==1">
 
             <p id="tag" th:text="${proj.tag.getTagName()}"></p>
             <div class="card-body">
