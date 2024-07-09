@@ -3,6 +3,7 @@ package org.surikov.first_project.entities.projects;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.surikov.first_project.entities.accounts.DesignerAccount;
+import org.surikov.first_project.entities.company.Company;
 import org.surikov.first_project.entities.data.Comment;
 import org.surikov.first_project.entities.data.Photo;
 import org.surikov.first_project.entities.data.StyleTag;
@@ -30,10 +31,18 @@ public class Project {
     private Long likesCount = 0L;
 
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Photo> photo;
+    private List<Photo> photoList;
 
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Comment> commentSet;
+    private List<Comment> commentList;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "company_project",
+            joinColumns = @JoinColumn(name = "project_id"),
+            inverseJoinColumns = @JoinColumn(name = "company_id")
+    )
+    private List<Company> companyList;
 
     @ManyToOne
     private DesignerAccount designer;
