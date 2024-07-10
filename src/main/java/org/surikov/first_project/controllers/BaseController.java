@@ -25,14 +25,12 @@ public class BaseController {
     private ProjectService projectService;
     private DesignerService designerService;
     private UserService userService;
-    private PhotoService photoService;
 
-    public BaseController(CommentService commentService, ProjectService projectService, DesignerService designerService, UserService userService, PhotoService photoService) {
+    public BaseController(CommentService commentService, ProjectService projectService, DesignerService designerService, UserService userService) {
         this.commentService = commentService;
         this.projectService = projectService;
         this.designerService = designerService;
         this.userService = userService;
-        this.photoService = photoService;
     }
 
     @GetMapping("/")
@@ -96,13 +94,13 @@ public class BaseController {
         UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String role = userDetails.getAuthorities().toString().replace("[", "").replace("]", "");
 
-        if(role.equals("ROLE_USER")){
-            comment.setUserAccount(userService.findByLogin(userDetails.getUsername()));
-        }
+            if(role.equals("ROLE_USER")){
+                comment.setUserAccount(userService.findByLogin(userDetails.getUsername()));
+            }
 
-        if(role.equals("ROLE_DESIGNER")){
-            comment.setDesignerAccount(designerService.findDesignerByLogin(userDetails.getUsername()));
-        }
+            if(role.equals("ROLE_DESIGNER")){
+                comment.setDesignerAccount(designerService.findDesignerByLogin(userDetails.getUsername()));
+            }
 
         commentService.save(comment);
         String url = request.getHeader("Referer");
