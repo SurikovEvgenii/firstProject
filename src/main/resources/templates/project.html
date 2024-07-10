@@ -15,10 +15,54 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
-        .company-list{
+
+        .wrap-company-list{
             display: none;
-            padding: 2px;
+            margin-bottom: 20px;
         }
+
+        .company-list{
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            width: 100%;
+            justify-content: space-between;
+            background-color: var(--bs-tertiary-bg);
+            border: var(--bs-border-width) solid var(--bs-border-color);
+            border-radius: var(--bs-border-radius);
+        }
+
+        .wrap-data{
+            display: flex;
+            align-items: center;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--bs-body-color);
+            text-align: center;
+            white-space: nowrap;
+            justify-content: center;
+        }
+
+        .wrap-data .custom-button{
+            background-color: #404b5a;
+            color: white;
+            text-decoration: none;
+            max-height: fit-content;
+            padding: 10px;
+            border-radius: 5px;
+            transition: 0.5s ease-out;
+        }
+
+        .wrap-data .custom-button:hover{
+            background-color: #65758f;
+        }
+
+
+
+
     </style>
 </head>
 <body>
@@ -76,29 +120,13 @@
                     <h5 class="card-title" th:text="${project.header}">Заголовок</h5>
                     <p class="card-text" th:text="${project.description}">Краткой описание</p>
                 </div>
-
-
-                <div class="company-list" th:each="company: ${project.companyList}">
-                    <div style="display: flex;
-                                border-style: solid;
-                                border-radius: 10px;
-                                border-color: lightgray;
-                                padding-top: 10px;
-                                border-width: thin;
-                                background-color: white;
-                                justify-content: space-between;
-                                padding-left: 20px;
-                                padding-right: 30px;">
-                        <div>
-                            <div>
-                                <p th:text="${company.category.name}"></p>
-                            </div>
-                            <div>
-                                <p th:text="${company.name}"></p>
-                            </div>
+                <div class="wrap-company-list">
+                    <div class="company-list"  th:each="company: ${project.companyList}">
+                        <div class="wrap-data" style="background: #65758f; color: white; width: 35%" th:text="${company.category.name}"></div>
+                        <div class="wrap-data" th:text="${company.name}">
                         </div>
-                        <div>
-                            <a class="button" th:href="@{${company.site}}" target="_blank">На сайт</a>
+                        <div class="wrap-data">
+                            <a type="button" class="custom-button" th:href="@{${company.site}}" target="_blank">На сайт</a>
                         </div>
                     </div>
                 </div>
