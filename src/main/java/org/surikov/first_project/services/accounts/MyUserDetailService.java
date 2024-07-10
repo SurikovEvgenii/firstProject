@@ -1,4 +1,4 @@
-package org.surikov.first_project.config.security;
+package org.surikov.first_project.services.accounts;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
@@ -8,8 +8,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.surikov.first_project.entities.accounts.DesignerAccount;
 import org.surikov.first_project.entities.accounts.UserAccount;
-import org.surikov.first_project.services.accounts.DesignerService;
-import org.surikov.first_project.services.accounts.UserService;
 
 @Service
 public class MyUserDetailService implements UserDetailsService {
