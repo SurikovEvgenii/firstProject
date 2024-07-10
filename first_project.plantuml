@@ -1,0 +1,228 @@
+@startuml
+
+!theme plain
+top to bottom direction
+skinparam linetype ortho
+
+class AuthorizationController
+class BaseController {
+  - userService: UserService
+  - projectService: ProjectService
+  - designerService: DesignerService
+  - commentService: CommentService
+}
+class Category {
+  - name: String
+  - id: Long
+  - companies: List<Company>
+}
+interface CategoryRepository << interface >>
+class CategoryService {
+  - categoryRepository: CategoryRepository
+}
+class Comment {
+  - id: Long
+  - project: Project
+  - designerAccount: DesignerAccount
+  - userAccount: UserAccount
+  - text: String
+}
+interface CommentRepository << interface >>
+class CommentService {
+  - commentRepository: CommentRepository
+}
+class Company {
+  - id: Long
+  - name: String
+  - site: String
+  - projectList: List<Project>
+  - number: String
+  - category: Category
+}
+interface CompanyRepository << interface >>
+class CompanyService {
+  - companyRepository: CompanyRepository
+}
+class DesignerAccount {
+  - id: Long
+  - surname: String
+  - login: String
+  - profilePicture: ProfilePicture
+  - password: String
+  - name: String
+  - telegram: String
+  - commentSet: Set<Comment>
+  - role: Role
+  - email: String
+  - number: String
+  - countFollowers: Long
+  - whatsapp: String
+  - projectSet: Set<Project>
+}
+interface DesignerRepository << interface >>
+class DesignerService {
+  - designerRepository: DesignerRepository
+}
+class FirstProjectApplication
+class MyUserDetailService {
+  ~ userService: UserService
+  ~ designerService: DesignerService
+}
+class PersonalPageController {
+  - userService: UserService
+  - designerService: DesignerService
+  - projectService: ProjectService
+  - profilePictureService: ProfilePictureService
+}
+class Photo {
+  - project: Project
+  - url: String
+  - name: String
+  - id: Long
+}
+interface PhotoRepository << interface >>
+class PhotoService {
+  - photoRepository: PhotoRepository
+}
+class ProfilePicture {
+  - id: Long
+  - url: String
+  - designerAccount: DesignerAccount
+}
+interface ProfilePictureRepository << interface >>
+class ProfilePictureService {
+  - pictureRepository: ProfilePictureRepository
+  - designerService: DesignerService
+  - designerRepository: DesignerRepository
+}
+class Project {
+  - photoList: List<Photo>
+  - commentList: List<Comment>
+  - description: String
+  - shortDescription: String
+  - likesCount: Long
+  - id: Long
+  - tag: StyleTag
+  - companyList: List<Company>
+  - header: String
+  - designer: DesignerAccount
+}
+class ProjectController {
+  - projectService: ProjectService
+  - designerService: DesignerService
+  - tagService: TagService
+  - photoService: PhotoService
+  - companyService: CompanyService
+  - categoryService: CategoryService
+}
+interface ProjectRepository << interface >>
+class ProjectService {
+  - projectRepository: ProjectRepository
+  - photoService: PhotoService
+  - photoRepository: PhotoRepository
+}
+class RegistrationController {
+  - passwordEncoder: PasswordEncoder
+  - designerService: DesignerService
+  - userService: UserService
+  - roleService: RoleService
+}
+class Role {
+  - id: Long
+  - role: String
+}
+interface RoleRepository << interface >>
+class RoleService {
+  - roleRepository: RoleRepository
+}
+class SpringSecurityConfig {
+  ~ AUTH_WHITELIST: String[]
+}
+class StyleTag {
+  - id: Long
+  - tagName: String
+  - project: Set<Project>
+}
+interface TagRepository << interface >>
+class TagService {
+  - tagRepository: TagRepository
+}
+class UserAccount {
+  - login: String
+  - role: Role
+  - name: String
+  - id: Long
+  - projectSet: Set<Project>
+  - surname: String
+  - email: String
+  - commentSet: Set<Comment>
+  - number: String
+  - password: String
+}
+interface UserRepository << interface >>
+class UserService {
+  - userRepository: UserRepository
+}
+
+BaseController            -[#595959,dashed]->  Comment                  : "«create»"
+BaseController           "1" *-[#595959,plain]-> "commentService\n1" CommentService           
+BaseController           "1" *-[#595959,plain]-> "designerService\n1" DesignerService          
+BaseController           "1" *-[#595959,plain]-> "projectService\n1" ProjectService           
+BaseController           "1" *-[#595959,plain]-> "userService\n1" UserService              
+Category                 "1" *-[#595959,plain]-> "companies\n*" Company                  
+CategoryService          "1" *-[#595959,plain]-> "categoryRepository\n1" CategoryRepository       
+Comment                  "1" *-[#595959,plain]-> "designerAccount\n1" DesignerAccount          
+Comment                  "1" *-[#595959,plain]-> "project\n1" Project                  
+Comment                  "1" *-[#595959,plain]-> "userAccount\n1" UserAccount              
+CommentService           "1" *-[#595959,plain]-> "commentRepository\n1" CommentRepository        
+Company                  "1" *-[#595959,plain]-> "category\n1" Category                 
+Company                  "1" *-[#595959,plain]-> "projectList\n*" Project                  
+CompanyService           "1" *-[#595959,plain]-> "companyRepository\n1" CompanyRepository        
+DesignerAccount          "1" *-[#595959,plain]-> "commentSet\n*" Comment                  
+DesignerAccount          "1" *-[#595959,plain]-> "profilePicture\n1" ProfilePicture           
+DesignerAccount          "1" *-[#595959,plain]-> "projectSet\n*" Project                  
+DesignerAccount          "1" *-[#595959,plain]-> "role\n1" Role                     
+DesignerService          "1" *-[#595959,plain]-> "designerRepository\n1" DesignerRepository       
+MyUserDetailService      "1" *-[#595959,plain]-> "designerService\n1" DesignerService          
+MyUserDetailService      "1" *-[#595959,plain]-> "userService\n1" UserService              
+PersonalPageController   "1" *-[#595959,plain]-> "designerService\n1" DesignerService          
+PersonalPageController    -[#595959,dashed]->  ProfilePicture           : "«create»"
+PersonalPageController   "1" *-[#595959,plain]-> "profilePictureService\n1" ProfilePictureService    
+PersonalPageController   "1" *-[#595959,plain]-> "projectService\n1" ProjectService           
+PersonalPageController   "1" *-[#595959,plain]-> "userService\n1" UserService              
+Photo                    "1" *-[#595959,plain]-> "project\n1" Project                  
+PhotoService              -[#595959,dashed]->  Photo                    : "«create»"
+PhotoService             "1" *-[#595959,plain]-> "photoRepository\n1" PhotoRepository          
+ProfilePicture           "1" *-[#595959,plain]-> "designerAccount\n1" DesignerAccount          
+ProfilePictureService    "1" *-[#595959,plain]-> "designerRepository\n1" DesignerRepository       
+ProfilePictureService    "1" *-[#595959,plain]-> "designerService\n1" DesignerService          
+ProfilePictureService     -[#595959,dashed]->  ProfilePicture           : "«create»"
+ProfilePictureService    "1" *-[#595959,plain]-> "pictureRepository\n1" ProfilePictureRepository 
+Project                  "1" *-[#595959,plain]-> "commentList\n*" Comment                  
+Project                  "1" *-[#595959,plain]-> "companyList\n*" Company                  
+Project                  "1" *-[#595959,plain]-> "designer\n1" DesignerAccount          
+Project                  "1" *-[#595959,plain]-> "photoList\n*" Photo                    
+Project                  "1" *-[#595959,plain]-> "tag\n1" StyleTag                 
+ProjectController        "1" *-[#595959,plain]-> "categoryService\n1" CategoryService          
+ProjectController        "1" *-[#595959,plain]-> "companyService\n1" CompanyService           
+ProjectController        "1" *-[#595959,plain]-> "designerService\n1" DesignerService          
+ProjectController        "1" *-[#595959,plain]-> "photoService\n1" PhotoService             
+ProjectController         -[#595959,dashed]->  Project                  : "«create»"
+ProjectController        "1" *-[#595959,plain]-> "projectService\n1" ProjectService           
+ProjectController        "1" *-[#595959,plain]-> "tagService\n1" TagService               
+ProjectService           "1" *-[#595959,plain]-> "photoRepository\n1" PhotoRepository          
+ProjectService           "1" *-[#595959,plain]-> "photoService\n1" PhotoService             
+ProjectService           "1" *-[#595959,plain]-> "projectRepository\n1" ProjectRepository        
+RegistrationController    -[#595959,dashed]->  DesignerAccount          : "«create»"
+RegistrationController   "1" *-[#595959,plain]-> "designerService\n1" DesignerService          
+RegistrationController   "1" *-[#595959,plain]-> "roleService\n1" RoleService              
+RegistrationController    -[#595959,dashed]->  UserAccount              : "«create»"
+RegistrationController   "1" *-[#595959,plain]-> "userService\n1" UserService              
+RoleService              "1" *-[#595959,plain]-> "roleRepository\n1" RoleRepository           
+StyleTag                 "1" *-[#595959,plain]-> "project\n*" Project                  
+TagService               "1" *-[#595959,plain]-> "tagRepository\n1" TagRepository            
+UserAccount              "1" *-[#595959,plain]-> "commentSet\n*" Comment                  
+UserAccount              "1" *-[#595959,plain]-> "projectSet\n*" Project                  
+UserAccount              "1" *-[#595959,plain]-> "role\n1" Role                     
+UserService              "1" *-[#595959,plain]-> "userRepository\n1" UserRepository           
+@enduml

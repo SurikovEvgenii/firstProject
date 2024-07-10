@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>D:/first_project/src/main/java/org/surikov/first_project</OriginalElement>
+  <nodes>
+    <node x="-2304.1374898349873" y="2204.431473389796">org.surikov.first_project.config.security.SpringSecurityConfig</node>
+    <node x="-2729.7100293551475" y="1893.4836975319913">org.surikov.first_project.entities.accounts.DesignerAccount</node>
+    <node x="-1716.6481116150244" y="2355.629506769546">org.surikov.first_project.controllers.BaseController</node>
+    <node x="-3076.7985612544517" y="2032.9036828745293">org.surikov.first_project.entities.accounts.UserAccount</node>
+    <node x="-1492.544408035783" y="3060.429280767774">org.surikov.first_project.services.data.RoleService</node>
+    <node x="-1848.1884729696553" y="1941.9133713740653">org.surikov.first_project.repository.data.PhotoRepository</node>
+    <node x="-720.4654597353415" y="2703.8895503314525">org.surikov.first_project.repository.accounts.UserRepository</node>
+    <node x="-1682.216528626306" y="2709.7753160071006">org.surikov.first_project.repository.data.CommentRepository</node>
+    <node x="-1231.5649151200505" y="2703.8895503314525">org.surikov.first_project.controllers.ProjectController</node>
+    <node x="-1511.5090266770774" y="1801.3445639741913">org.surikov.first_project.services.data.PhotoService</node>
+    <node x="-296.4429803547987" y="2923.44650866527">org.surikov.first_project.repository.data.TagRepository</node>
+    <node x="-1713.1449192696239" y="2566.9564891498826">org.surikov.first_project.services.data.CommentService</node>
+    <node x="-658.529149895981" y="2897.5034100425014">org.surikov.first_project.services.data.TagService</node>
+    <node x="-2052.8134660400938" y="2628.0416732730905">org.surikov.first_project.entities.company.Category</node>
+    <node x="-1231.5649151200505" y="2918.1564963959686">org.surikov.first_project.controllers.RegistrationController</node>
+    <node x="-1088.420284492983" y="1941.9133713740653">org.surikov.first_project.services.data.ProfilePictureService</node>
+    <node x="-2747.110207733779" y="2714.778939246247">org.surikov.first_project.entities.projects.Project</node>
+    <node x="-743.6429449138337" y="2305.0791526219987">org.surikov.first_project.services.accounts.DesignerService</node>
+    <node x="-649.5717533262571" y="2995.364341090918">org.surikov.first_project.services.company.CategoryService</node>
+    <node x="-1231.5649151200505" y="2545.1236297538053">org.surikov.first_project.controllers.PersonalPageController</node>
+    <node x="-1634.4174937959046" y="2025.4836975319915">org.surikov.first_project.services.projects.ProjectService</node>
+    <node x="-2304.1374898349873" y="2330.52357125736">org.surikov.first_project.FirstProjectApplication</node>
+    <node x="-3018.2985612544517" y="1895.068249235889">org.surikov.first_project.entities.data.Role</node>
+    <node x="-1047.7334894240798" y="2132.5820080465323">org.surikov.first_project.repository.accounts.DesignerRepository</node>
+    <node x="-1634.4174937959046" y="1941.9133713740653">org.surikov.first_project.repository.projects.ProjectRepository</node>
+    <node x="-658.529149895981" y="2817.99185865488">org.surikov.first_project.services.company.CompanyService</node>
+    <node x="-2367.6715364634147" y="2817.001272528779">org.surikov.first_project.entities.data.StyleTag</node>
+    <node x="-1009.420284492983" y="1846.8411011877713">org.surikov.first_project.repository.data.ProfilePictureRepository</node>
+    <node x="-2304.1374898349873" y="2284.977522323578">org.surikov.first_project.controllers.AuthorizationController</node>
+    <node x="-720.4654597353415" y="2424.5714108782877">org.surikov.first_project.services.accounts.MyUserDetailService</node>
+    <node x="-296.4429803547987" y="2835.49185865488">org.surikov.first_project.repository.company.CompanyRepository</node>
+    <node x="-2367.6715364634147" y="2608.29878130775">org.surikov.first_project.entities.company.Company</node>
+    <node x="-2396.6953024384875" y="1885.4133713740653">org.surikov.first_project.entities.data.ProfilePicture</node>
+    <node x="-720.4654597353415" y="2568.063669134577">org.surikov.first_project.services.accounts.UserService</node>
+    <node x="-3076.7985612544517" y="2526.6665014603873">org.surikov.first_project.entities.data.Comment</node>
+    <node x="-296.4429803547987" y="3011.4011586756596">org.surikov.first_project.repository.company.CategoryRepository</node>
+    <node x="-2367.6715364634147" y="2943.170504273229">org.surikov.first_project.entities.data.Photo</node>
+    <node x="-1812.6182257917326" y="3077.929280767774">org.surikov.first_project.repository.data.RoleRepository</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.surikov.first_project.entities.accounts.DesignerAccount" target="org.surikov.first_project.entities.data.ProfilePicture" relationship="TO_ONE">
+      <point x="115.0" y="-139.41998534253798" />
+      <point x="-2476.014964214857" y="1941.5637121894533" />
+      <point x="-2476.014964214857" y="1940.9133713740653" />
+      <point x="-133.5" y="0.0" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.data.ProfilePicture" target="org.surikov.first_project.entities.accounts.DesignerAccount" relationship="TO_ONE">
+      <point x="-133.5" y="15.0" />
+      <point x="-2476.014964214857" y="1955.9133713740653" />
+      <point x="-2476.014964214857" y="1956.5637121894533" />
+      <point x="115.0" y="-124.41998534253798" />
+    </edge>
+    <edge source="org.surikov.first_project.services.data.TagService" target="org.surikov.first_project.repository.data.TagRepository" relationship="TO_ONE">
+      <point x="114.5" y="8.443098622768503" />
+      <point x="-81.0" y="0.0" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.PersonalPageController" target="org.surikov.first_project.services.data.ProfilePictureService" relationship="TO_ONE">
+      <point x="-4.247746048288036" y="-67.68983843623391" />
+      <point x="-1079.8126611683385" y="1997.4133713740653" />
+      <point x="-157.0" y="0.0" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.data.Comment" target="org.surikov.first_project.entities.accounts.UserAccount" relationship="TO_ONE">
+      <point x="-58.21358250724455" y="-72.42031539885386" />
+      <point x="-3001.5121437616963" y="2266.3929687640084" />
+      <point x="-73.51314496618062" y="93.9892858894791" />
+    </edge>
+    <edge source="org.surikov.first_project.services.projects.ProjectService" target="org.surikov.first_project.repository.projects.ProjectRepository" relationship="TO_ONE">
+      <point x="-43.5" y="-55.49999999999977" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.accounts.DesignerAccount" target="org.surikov.first_project.entities.projects.Project" relationship="TO_MANY">
+      <point x="10.208484713716302" y="159.54069763883126" />
+      <point x="-2588.6628338527244" y="2240.5243951708226" />
+      <point x="42.44737388105477" y="-132.0447089703339" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.company.Category" target="org.surikov.first_project.entities.company.Company" relationship="TO_MANY">
+      <point x="-108.5" y="16.257108034659268" />
+      <point x="101.0" y="0.0" />
+    </edge>
+    <edge source="org.surikov.first_project.services.data.ProfilePictureService" target="org.surikov.first_project.repository.data.ProfilePictureRepository" relationship="TO_ONE">
+      <point x="39.5" y="-55.5" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.accounts.DesignerAccount" target="org.surikov.first_project.entities.data.Role" relationship="TO_ONE">
+      <point x="-115.0" y="-142.41544829610234" />
+      <point x="56.5" y="0.0" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.projects.Project" target="org.surikov.first_project.entities.data.StyleTag" relationship="TO_ONE">
+      <point x="116.0" y="18.222333282531963" />
+      <point x="-89.5" y="0.0" />
+    </edge>
+    <edge source="org.surikov.first_project.services.accounts.MyUserDetailService" target="org.surikov.first_project.services.accounts.DesignerService" relationship="TO_ONE">
+      <point x="-96.74962907223448" y="-35.553408134079746" />
+      <point x="-595.1429449138337" y="2432.518002744208" />
+      <point x="-595.1429449138337" y="2359.879585084174" />
+      <point x="-87.74454380613929" y="23.300432462175195" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.BaseController" target="org.surikov.first_project.services.data.CommentService" relationship="TO_ONE">
+      <point x="22.453865683564345" y="-18.51739470512075" />
+      <point x="-1563.19424593146" y="2601.0926078407906" />
+      <point x="152.0" y="2.636118690908006" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.PersonalPageController" target="org.surikov.first_project.services.accounts.UserService" relationship="TO_ONE">
+      <point x="156.0" y="0.0" />
+      <point x="-122.0" y="13.05996061922815" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.RegistrationController" target="org.surikov.first_project.services.data.RoleService" relationship="TO_ONE">
+      <point x="0.0" y="67.5" />
+      <point x="-1092.5649151200505" y="3101.902798263844" />
+      <point x="118.5" y="9.973517496070144" />
+    </edge>
+    <edge source="org.surikov.first_project.services.projects.ProjectService" target="org.surikov.first_project.repository.data.PhotoRepository" relationship="TO_ONE">
+      <point x="-137.0" y="-2.6532807337771374" />
+      <point x="-1754.5999100908023" y="2078.330416798214" />
+      <point x="4.088562878853054" y="14.0" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.data.Comment" target="org.surikov.first_project.entities.projects.Project" relationship="TO_ONE">
+      <point x="4.6810069585490055E-4" y="79.4996211782252" />
+      <point x="-2943.298093153756" y="2756.8305754116773" />
+      <point x="-2732.3776839773236" y="2756.8305754116773" />
+      <point x="-101.26747624354448" y="-135.37190011111386" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.projects.Project" target="org.surikov.first_project.entities.data.Comment" relationship="TO_MANY">
+      <point x="-105.93218947695959" y="-7.6850058859809" />
+      <point x="-3001.4397522253585" y="2846.593933360266" />
+      <point x="-3001.4397522253585" y="2554.092840243101" />
+      <point x="-122.81669961324098" y="-52.073661217286485" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.ProjectController" target="org.surikov.first_project.services.company.CategoryService" relationship="TO_ONE">
+      <point x="129.0" y="71.09226424165172" />
+      <point x="-735.6918939119982" y="2866.481814573104" />
+      <point x="-735.6918939119982" y="3026.864341090918" />
+      <point x="-149.0" y="0.0" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.BaseController" target="org.surikov.first_project.services.accounts.DesignerService" relationship="TO_ONE">
+      <point x="0.0" y="-67.5" />
+      <point x="-1585.6481116150244" y="2287.5791526219987" />
+      <point x="-671.5012598096159" y="2287.5791526219987" />
+      <point x="-76.3583148957822" y="-15.017381555638167" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.BaseController" target="org.surikov.first_project.entities.data.Comment" relationship="CREATE">
+      <point x="-130.6825327104698" y="8.08041060554524" />
+      <point x="-2545.4763330576843" y="2431.209917375091" />
+      <point x="-2545.4763330576843" y="2574.0455618843994" />
+      <point x="133.5" y="-32.120939575987904" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.RegistrationController" target="org.surikov.first_project.entities.accounts.UserAccount" relationship="CREATE">
+      <point x="-127.72956728755071" y="21.548634019291512" />
+      <point x="-1220.2944824076012" y="3020.451013543053" />
+      <point x="-1933.376404145984" y="3020.451013543053" />
+      <point x="-1933.376404145984" y="3123.369339316719" />
+      <point x="-3167.740719988914" y="3123.369339316719" />
+      <point x="-3167.740719988914" y="2172.4036828745293" />
+      <point x="-115.0" y="0.0" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.ProjectController" target="org.surikov.first_project.services.accounts.DesignerService" relationship="TO_ONE">
+      <point x="88.07882210706191" y="-61.3293884351574" />
+      <point x="-1014.4860930129886" y="2768.344180705544" />
+      <point x="-871.5312185515243" y="2768.344180705544" />
+      <point x="-871.5312185515243" y="2356.2831034684596" />
+      <point x="-145.87352283052053" y="19.703950846460884" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.PersonalPageController" target="org.surikov.first_project.services.accounts.DesignerService" relationship="TO_ONE">
+      <point x="47.20762610138627" y="-25.895889646964406" />
+      <point x="-1028.3572890186642" y="2316.751601382713" />
+      <point x="-146.33051369796544" y="-19.82755123928564" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.RegistrationController" target="org.surikov.first_project.entities.accounts.DesignerAccount" relationship="CREATE">
+      <point x="-139.0" y="0.0" />
+      <point x="-1803.3134660400938" y="2985.6564963959686" />
+      <point x="-1803.3134660400938" y="2078.330416798214" />
+      <point x="109.16700802691958" y="-2.6532807337771374" />
+    </edge>
+    <edge source="org.surikov.first_project.services.accounts.DesignerService" target="org.surikov.first_project.repository.accounts.DesignerRepository" relationship="TO_ONE">
+      <point x="2.1774851784922475" y="-31.5" />
+      <point x="-592.9654597353415" y="2226.4044208795185" />
+      <point x="-931.4202844929831" y="2226.4044208795185" />
+      <point x="15.31320493109672" y="14.0" />
+    </edge>
+    <edge source="org.surikov.first_project.services.data.CommentService" target="org.surikov.first_project.repository.data.CommentRepository" relationship="TO_ONE">
+      <point x="-17.071609356682075" y="31.5" />
+      <point x="0.0" y="-14.0" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.PersonalPageController" target="org.surikov.first_project.entities.data.ProfilePicture" relationship="CREATE">
+      <point x="-57.53838637367471" y="-58.912086347524564" />
+      <point x="-1133.1033014937252" y="1742.6788756022615" />
+      <point x="-2175.262102738897" y="1742.6788756022615" />
+      <point x="87.93319969959066" y="-6.655165527878353" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.company.Company" target="org.surikov.first_project.entities.company.Category" relationship="TO_ONE">
+      <point x="101.0" y="-16.257108034659268" />
+      <point x="-108.5" y="0.0" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.data.Photo" target="org.surikov.first_project.entities.projects.Project" relationship="TO_ONE">
+      <point x="-70.0" y="-24.391565026982335" />
+      <point x="116.0" y="132.0" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.data.Comment" target="org.surikov.first_project.entities.accounts.DesignerAccount" relationship="TO_ONE">
+      <point x="133.5" y="-47.120939575987904" />
+      <point x="-2676.127247872113" y="2559.0455618843994" />
+      <point x="-61.41721851696548" y="152.96680511950444" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.accounts.UserAccount" target="org.surikov.first_project.entities.projects.Project" relationship="TO_MANY">
+      <point x="4.6810069585490055E-4" y="139.4996211782252" />
+      <point x="-2961.798093153756" y="2225.8841126543257" />
+      <point x="-3152.740719988914" y="2225.8841126543257" />
+      <point x="-3152.740719988914" y="2926.8552634062867" />
+      <point x="-2732.116264542318" y="2926.8552634062867" />
+      <point x="-101.0060568085388" y="48.07716737440546" />
+    </edge>
+    <edge source="org.surikov.first_project.services.company.CompanyService" target="org.surikov.first_project.repository.company.CompanyRepository" relationship="TO_ONE">
+      <point x="150.0" y="0.0" />
+      <point x="-103.5" y="0.0" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.projects.Project" target="org.surikov.first_project.entities.accounts.DesignerAccount" relationship="TO_ONE">
+      <point x="0.0" y="-139.5" />
+      <point x="-16.400178378631608" y="187.5" />
+    </edge>
+    <edge source="org.surikov.first_project.services.company.CategoryService" target="org.surikov.first_project.repository.company.CategoryRepository" relationship="TO_ONE">
+      <point x="0.0" y="-31.5" />
+      <point x="-500.57175332625707" y="3025.886588540945" />
+      <point x="-2.7566601290149038" y="0.4854298652853686" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.accounts.UserAccount" target="org.surikov.first_project.entities.data.Comment" relationship="TO_MANY">
+      <point x="-14.30505045649727" y="124.9268487864307" />
+      <point x="-2943.298093153756" y="2297.33053166096" />
+      <point x="4.6810069585490055E-4" y="-79.5003788217748" />
+    </edge>
+    <edge source="org.surikov.first_project.services.data.ProfilePictureService" target="org.surikov.first_project.entities.data.ProfilePicture" relationship="CREATE">
+      <point x="-132.98410609068105" y="-23.378635809832986" />
+      <point x="-1061.1083764279147" y="1974.0347355642323" />
+      <point x="-1061.1083764279147" y="1677.1688781886703" />
+      <point x="-2235.8448270126773" y="1677.1688781886703" />
+      <point x="-2235.8448270126773" y="1915.493433194259" />
+      <point x="15.264483670403934" y="-25.419938179806195" />
+    </edge>
+    <edge source="org.surikov.first_project.services.projects.ProjectService" target="org.surikov.first_project.services.data.PhotoService" relationship="TO_ONE">
+      <point x="115.90846711882728" y="-55.49999999999977" />
+      <point x="0.0" y="31.5" />
+    </edge>
+    <edge source="org.surikov.first_project.services.data.ProfilePictureService" target="org.surikov.first_project.repository.accounts.DesignerRepository" relationship="TO_ONE">
+      <point x="157.0" y="29.772326644220584" />
+      <point x="-931.3687805541354" y="2027.1856980182858" />
+      <point x="15.36470886994448" y="-8.86838709500762" />
+    </edge>
+    <edge source="org.surikov.first_project.services.data.RoleService" target="org.surikov.first_project.repository.data.RoleRepository" relationship="TO_ONE">
+      <point x="118.5" y="-5.026482503929856" />
+      <point x="-1730.1178613731918" y="3086.902798263844" />
+      <point x="-0.49963558145918796" y="14.0" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.ProjectController" target="org.surikov.first_project.services.data.PhotoService" relationship="TO_ONE">
+      <point x="-129.0" y="-14.99955033145261" />
+      <point x="-1280.0" y="2780.39" />
+      <point x="101.50902667707737" y="31.5" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.ProjectController" target="org.surikov.first_project.services.company.CompanyService" relationship="TO_ONE">
+      <point x="129.0" y="39.36459088587253" />
+      <point x="-150.0" y="-14.737717437555148" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.BaseController" target="org.surikov.first_project.services.accounts.UserService" relationship="TO_ONE">
+      <point x="96.87069629573489" y="-62.461888881978666" />
+      <point x="-1488.7774153192895" y="2441.9463129068467" />
+      <point x="-801.7903480964459" y="2441.9463129068467" />
+      <point x="-801.7903480964459" y="2597.015599762155" />
+      <point x="-123.34069156383634" y="-2.5480693724221055" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.accounts.UserAccount" target="org.surikov.first_project.entities.data.Role" relationship="TO_ONE">
+      <point x="20.332360957793867" y="-126.94660405293314" />
+      <point x="-2941.466200296658" y="2014.4677715479722" />
+      <point x="-2941.5259249158207" y="2014.4677715479722" />
+      <point x="20.272636338631173" y="44.91021503845931" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.RegistrationController" target="org.surikov.first_project.services.accounts.DesignerService" relationship="TO_ONE">
+      <point x="138.99991512005045" y="2.444556448608637E-4" />
+      <point x="-898.2655401445451" y="2985.6567408516134" />
+      <point x="-898.2655401445451" y="2336.5787738002236" />
+      <point x="-148.4995318993041" y="-3.7882177502979175E-4" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.PersonalPageController" target="org.surikov.first_project.services.projects.ProjectService" relationship="TO_ONE">
+      <point x="-103.1167691544888" y="-63.21341355932282" />
+      <point x="-1178.6816842745393" y="2080.984" />
+      <point x="137.00049379590473" y="3.0246800861277734E-4" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.ProjectController" target="org.surikov.first_project.entities.projects.Project" relationship="CREATE">
+      <point x="-129.0" y="29.111722197326344" />
+      <point x="-1772.6435349606747" y="2824.501272528779" />
+      <point x="-1772.6435349606747" y="2586.916305543395" />
+      <point x="-2545.4763330576843" y="2586.916305543395" />
+      <point x="85.63387467609482" y="-139.5" />
+    </edge>
+    <edge source="org.surikov.first_project.services.data.PhotoService" target="org.surikov.first_project.repository.data.PhotoRepository" relationship="TO_ONE">
+      <point x="-130.0" y="0.0" />
+      <point x="-1758.6884729696553" y="1832.8445639741913" />
+      <point x="0.0" y="-14.0" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.data.StyleTag" target="org.surikov.first_project.entities.projects.Project" relationship="TO_MANY">
+      <point x="-89.5" y="15.0" />
+      <point x="116.0" y="33.22233328253196" />
+    </edge>
+    <edge source="org.surikov.first_project.services.data.PhotoService" target="org.surikov.first_project.entities.data.Photo" relationship="CREATE">
+      <point x="-130.0" y="-15.0" />
+      <point x="-3182.740719988914" y="1817.8445639741913" />
+      <point x="-3182.740719988914" y="3041.1596050708413" />
+      <point x="-75.24109586779741" y="30.489100797612082" />
+    </edge>
+    <edge source="org.surikov.first_project.services.accounts.UserService" target="org.surikov.first_project.repository.accounts.UserRepository" relationship="TO_ONE">
+      <point x="-37.5" y="31.5" />
+      <point x="0.0" y="-14.0" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.BaseController" target="org.surikov.first_project.services.projects.ProjectService" relationship="TO_ONE">
+      <point x="-28.826242591853088" y="-68.51491295597725" />
+      <point x="-1614.4743542068775" y="2133.2501132408624" />
+      <point x="-117.69296524020479" y="52.266415708871136" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.ProjectController" target="org.surikov.first_project.services.projects.ProjectService" relationship="TO_ONE">
+      <point x="-129.00008487994955" y="4.496685473895923E-4" />
+      <point x="-1295.0" y="2795.39" />
+      <point x="-1295.0" y="2112.6518859234598" />
+      <point x="133.98807271093483" y="31.668188391468448" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.accounts.DesignerAccount" target="org.surikov.first_project.entities.data.Comment" relationship="TO_MANY">
+      <point x="-115.0" y="0.0" />
+      <point x="-2829.2985612544517" y="2080.9836975319913" />
+      <point x="114.0" y="-79.5" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.projects.Project" target="org.surikov.first_project.entities.data.Photo" relationship="TO_MANY">
+      <point x="116.0" y="117.0" />
+      <point x="-70.0" y="-39.391565026982335" />
+    </edge>
+    <edge source="org.surikov.first_project.services.data.ProfilePictureService" target="org.surikov.first_project.services.accounts.DesignerService" relationship="TO_ONE">
+      <point x="157.0" y="0.0" />
+      <point x="-577.9654597353415" y="1997.4133713740653" />
+      <point x="17.177485178492248" y="-31.5" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.company.Company" target="org.surikov.first_project.entities.projects.Project" relationship="TO_MANY">
+      <point x="-101.0" y="22.48015793849686" />
+      <point x="-2389.205398132007" y="2722.2789392462464" />
+      <point x="-2389.205398132007" y="2722.278939246247" />
+      <point x="116.0" y="-132.0" />
+    </edge>
+    <edge source="org.surikov.first_project.entities.projects.Project" target="org.surikov.first_project.entities.company.Company" relationship="TO_MANY">
+      <point x="116.0" y="-117.0" />
+      <point x="-101.0" y="37.48015793849686" />
+    </edge>
+    <edge source="org.surikov.first_project.services.accounts.MyUserDetailService" target="org.surikov.first_project.services.accounts.UserService" relationship="TO_ONE">
+      <point x="-5.5" y="43.5" />
+      <point x="0.0" y="-31.5" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.ProjectController" target="org.surikov.first_project.services.data.TagService" relationship="TO_ONE">
+      <point x="130.8385560782193" y="55.24935182513718" />
+      <point x="-702.4818923309315" y="2850.6389021565897" />
+      <point x="-702.4818923309315" y="2926.3037117375056" />
+      <point x="0.7790281695829435" y="-2.6996983049957635" />
+    </edge>
+    <edge source="org.surikov.first_project.controllers.RegistrationController" target="org.surikov.first_project.services.accounts.UserService" relationship="TO_ONE">
+      <point x="139.0" y="15.00024445564486" />
+      <point x="-801.5683342231538" y="3000.6567408516134" />
+      <point x="-801.5683342231538" y="2629.3513031095845" />
+      <point x="-122.0" y="29.78763397500734" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.5834920634920635" showDependencies="true" x="-2817.683351468988" y="2053.316648531012" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>Project Files</SCOPE>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+
